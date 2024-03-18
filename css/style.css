@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.inputmain {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputmain p {
+    font-size: 15px;
+    font-style: italic;
+    top: 50px;
+    padding-left: 10px;
+    position: absolute;
+    color: red;
+}
+
+.inputmain input {
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    outline: none;
+    font-size: 15px;
+    width: 200px;
+}
+
+.inputmain button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.inputmain button:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+}
+
+span {
+    position: relative;
+    left: 40px;
+}
+
+#preco {
+    padding-left: 30px;
+}
+
+.listaMain {
+    margin: 0 auto;
+    width: 25%;
+}
+
+.listaMain li {
+    justify-content: center;
+    text-align: center;
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.totalValor {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.clear {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.clear button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.clear button:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+}
+
+
+@media (max-width: 412px) {
+    .inputmain {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    span {
+        position: relative;
+        left: -80px;
+        top: 39px;
+    }
+
+    .listaMain {
+        width: 100%;
+        display: flex;
+    }
+
+    .listaMain ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+    }
+
+    .listaMain li {
+        display: flex;
+        gap: 50px;
+        justify-content: space-evenly;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+}
+
+@media (max-width: 500px) {
+    .inputmain {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    span {
+        position: relative;
+        left: -80px;
+        top: 39px;
+    }
+
+    .listaMain {
+        width: 100%;
+        display: flex;
+    }
+
+    .listaMain ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+    }
+
+    .listaMain li {
+        display: flex;
+        gap: 50px;
+        justify-content: space-evenly;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+}

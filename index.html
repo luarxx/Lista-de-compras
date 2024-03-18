@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Lista de compras</title>
+  </head>
+  <body>
+    <div>
+      <h1>Lista de compras</h1>
+    </div>
+    <div class="inputmain">
+      <input type="text" name="texto" id="campo" />
+      <span>R$</span>
+      <input
+        inputmode="numeric"
+        type="number "
+        name="number"
+        id="preco"
+        required
+        oninput="this.value = this.value.replace(/[^0-9-.]/g, '');"
+      />
+      <button onclick="add()">Adicionar</button>
+    </div>
+    <div class="listaMain">
+      <ul></ul>
+    </div>
+    <div class="totalValor">
+      <label for=""
+        >Total:
+        <p class="totalfinal"></p>
+      </label>
+    </div>
+    <div class="clear">
+      <button onclick="window.location.href='index.html'">Limpar</button>
+    </div>
+
+    <script>
+      function add() {
+        var input = document.getElementById("campo"); //pega o valor do input e armazena na variavel input
+        var preco = document.getElementById("preco");
+        var texto = input.value; //pega o valor da variavel input e armazena na variavel texto
+        var precoValor = parseFloat(preco.value);
+        var precoNovo = isNaN(precoValor)
+          ? 0
+          : precoValor.toLocaleString("pt-br", {
+              style: "currency",
+              currency: "BRL",
+            });
+        console.log(texto);
+
+        var ul = document.querySelector("ul"); //pega o primeiro elemento ul e armazena na variavel ul
+        var li = document.createElement("li"); //cria um elemento li e armazena na variavel li
+        var label = document.createElement("label");
+        var lipreco = document.createElement("p");
+        label.textContent = texto; //adiciona o valor da variavel texto ao elemento p
+        lipreco.textContent = precoNovo;
+        ul.appendChild(li); //adiciona o elemento li ao elemento ul
+        li.appendChild(label);
+        li.appendChild(lipreco);
+        input.value = ""; //limpa o valor do input
+        preco.value = "";
+
+        var itens = document.querySelectorAll("li");
+        var total = 0;
+
+        itens.forEach(function (item) {
+          var valor = item.querySelector("p").textContent;
+          valor = valor.replace("R$", "");
+          valor = valor.replace(",", ".");
+          valor = parseFloat(valor);
+          total += valor; //total = total + valor
+          var totalfinal = document.querySelector(".totalfinal");
+          totalfinal.textContent = total.toLocaleString("pt-br", {
+            style: "currency",
+            currency: "BRL",
+          });
+
+          console.log(total);
+        });
+
+        if (texto === "") {
+          alert("Digite o nome do produto");
+          li.remove();
+        }
+
+        /* if (texto.trim() === "" || isNaN(precoValor)) {
+          alert("Digite um valor");
+          li.remove();
+        } */
+
+        if (isNaN(precoValor)) {
+          alert("Digite o valor do produto");
+          li.remove();
+        }
+      }
+    </script>
+  </body>
+</html>
