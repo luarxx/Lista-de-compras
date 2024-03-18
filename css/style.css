@@ -89,9 +89,12 @@ span {
 
 .listaMain ul li label {
     text-transform: uppercase;
+    font-weight: 600;
+    
 }
 
 .totalValor {
+    margin: 0 auto;
     width: 50%;
     display: flex;
     justify-content: center;
