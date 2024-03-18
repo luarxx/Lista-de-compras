@@ -4,14 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/script.js"></script>
+    
     <title>Lista de compras</title>
+    
   </head>
   <body>
     <div>
       <h1>Lista de compras</h1>
     </div>
     <div class="inputmain">
-      <input type="text" name="texto" id="campo" />
+      <select name="" id="listaSelect">
+        <option value="🥛leite">🥛Leite</option>
+        <option value="🍞pao">🍞Pão</option>
+        <option value="arroz">Arroz</option>
+        <option value="feijao">Feijão</option>
+        <option value="carne">Carne</option>
+        <option value="frango">Frango</option>
+        <option value="bis">Bis</option>
+        <option value="chocolate">Chocolate</option>
+        <option value="Coca-cola">Coca-cola</option>
+        <option value="agua">Água</option>
+        <option value="suco">Tang</option>
+        <option value="cafe">Café</option>
+        <option value="acucar">Açúcar</option>
+        <option value="sal">Sal</option>
+        <option value="macarrao">Macarrão</option>
+        <option value="molho de tomate">Molho de tomate</option>
+        <option value="manteiga">Manteiga</option>
+        <option value="margarina">Margarina</option>
+        <option value="azeite">Azeite</option>
+        <option value="oleo">Óleo</option>
+        <option value="vinagre">Vinagre</option>
+      </select>
+      <!-- <input type="text" name="texto" id="campo" /> -->
       <span>R$</span>
       <input
         inputmode="numeric"
@@ -21,23 +47,25 @@
         required
         oninput="this.value = this.value.replace(/[^0-9-.]/g, '');"
       />
-      <button onclick="add()">Adicionar</button>
+      <button onclick="adicionar()">Adicionar</button>
     </div>
     <div class="listaMain">
       <ul></ul>
     </div>
     <div class="totalValor">
-      <label for=""
-        >Total:
-        <p class="totalfinal"></p>
-      </label>
+      <label for="">Total: </label>
+      <p class="totalfinal"></p>
     </div>
     <div class="clear">
       <button onclick="window.location.href='index.html'">Limpar</button>
     </div>
 
-    <script>
-      function add() {
+
+
+
+
+    
+      <!-- /* function add() {
         var input = document.getElementById("campo"); //pega o valor do input e armazena na variavel input
         var preco = document.getElementById("preco");
         var texto = input.value; //pega o valor da variavel input e armazena na variavel texto
@@ -90,11 +118,12 @@
           li.remove();
         } */
 
-        if (isNaN(precoValor)) {
+        /* if (isNaN(precoValor)) {
           alert("Digite o valor do produto");
           li.remove();
         }
-      }
-    </script>
+      } */ -->
+
+      
   </body>
 </html>
